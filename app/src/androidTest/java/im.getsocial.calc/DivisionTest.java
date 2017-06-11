@@ -32,6 +32,4 @@ public class DivisionTest {
         calculator.performDivision();
         calculator.verifyResultEquals(1);
     }
-
-
 }

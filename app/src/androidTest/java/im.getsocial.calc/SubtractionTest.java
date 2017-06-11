@@ -18,11 +18,19 @@ public class SubtractionTest {
     Calculator calculator = new Calculator();
 
     @Test
-    public void basicSubstructionTest() {
-        calculator.fillInFirstArgument(10);
-        calculator.fillInSecondArgument(10);
+    public void simplePositiveResultSubtractionTest() {
+        calculator.fillInFirstArgument(9);
+        calculator.fillInSecondArgument(7);
         calculator.performSubtraction();
-        calculator.verifyResultEquals(0);
+        calculator.verifyResultEquals(2);
+    }
+
+    @Test
+    public void bigIntegerPositiveResultSubtractionTest() {
+        calculator.fillInFirstArgument(123456789);
+        calculator.fillInSecondArgument(9);
+        calculator.performSubtraction();
+        calculator.verifyResultEquals(123456780);
     }
 
     @Test
@@ -31,6 +39,5 @@ public class SubtractionTest {
         calculator.fillInSecondArgument(99);
         calculator.performSubtraction();
         calculator.verifyResultEquals(-89);
-
     }
 }
